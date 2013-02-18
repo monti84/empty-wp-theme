@@ -1,13 +1,23 @@
-.alignleft {
-  float: left;
-}
-
 html, body { width:100%;height: 100%;}
 body { background: url('../images/background-body.png') repeat #ffffff; }
 
 #header { background: url('../images/background-header.png') repeat #ffffff; }
 #footer { background: url('../images/background-footer.png') repeat #ffffff; }
 #content { background: url('../images/background-content.png') repeat #ffffff; }
+
+
+
+/* Global */
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: left;
+}
+
+
+
 
 #page-container {
   width: 100%;
