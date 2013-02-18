@@ -2,57 +2,56 @@
 <html>
 <head>
   <meta charset=utf-8 />
-  <title></title>
-  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/typography.css" />
+  <title><?php bloginfo('name'); ?><?php wp_title(); ?></title> 
+  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'template_directory' ) ?>/css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'template_directory' ) ?>/css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo( 'template_directory' ) ?>/css/typography.css" />
 
-  <script src="js/jquery-1.8.2.min.js"></script>
-  <script src="js/jquery.cycle.all.latest.js"></script>
-  <script src="js/main.js"></script>
+  <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery-1.8.2.min.js"></script>
+  <script src="<?php bloginfo( 'template_directory' ) ?>/js/jquery.cycle.all.latest.js"></script>
+  <script src="<?php bloginfo( 'template_directory' ) ?>/js/main.js"></script>
  
   <!--[if IE]>
-    <script src="js/html5.js"></script>
+    <script src="<?php bloginfo( 'template_directory' ) ?>/js/html5.js"></script>
   <![endif]-->
 
+<?php wp_head(); ?>
 </head>
 
-<body><!-- i cant select branch from np++ -->
+<?php if(is_page()) { $page_slug = $post->post_name; } ?>
+
+<body <?php body_class($page_slug); ?>>
   <div id="page-container">
     <div class="top-page">
       <div class="header-container">
         <header id="header">
-          <div id="logo">
-            <img src="images/logo-main.png" class="alignleft"/>
-            <p>Company LTD</p>
-            <p><small>You give money, we take it</small></p>
+          <div class="logo">
+            <img src="<?php bloginfo( 'template_directory' ) ?>/images/logo-main.png" class="alignleft"/>
           </div>
-          <nav id="primary-navigation">
-            <ul class="dropdown">
-              <li><a href="#">Menu 1</a>
-                <ul>
-                  <li><a href="#">Submenu 1</a></li>
-                  <li><a href="#">Submenu 2 -------</a></li>
-                  <li><a href="#">Submenu 3</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Menu 2</a></li>
-              <li><a href="#">Menu 3</a></li>
-              <li><a href="#">Menu 4</a></li>
-              <li><a href="#">Menu 5--</a>
-                <ul>
-                  <li><a href="#">Submenu 1-</a></li>
-                  <li><a href="#">Submenu 2</a></li>
-                  <li><a href="#">Submenu 3----</a>
-                    <ul>
-                      <li><a href="#">Sub-submenu 1--</a></li>
-                      <li><a href="#">Sub-submenu 2------</a></li>
-                      <li><a href="#">Sub-submenu 3</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
+          
+          <div class="social">
+            <ul>
+              <li><a href="http://www.facebook.com/">Facebook</a></li>
+              <li><a href="http://www.twitter.com/">Twitter</a></li>
+              <li><a href="http://www.linkedin.com/">Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="contact">
+            <ul>
+              <li>Phone: +72 112 4450</li>
+              <li>Fax: +72 112 4500</li>
+              <li>E-mail: <a href="mailto: email@mail.ma">email@mail.ma</a></li>
+            </ul>
+          </div>
+          
+          <nav>
+            <ul>
+              <li><a href="<?php echo home_url( '/' )?>">Home</a></li>
+<?php 
+$home = get_page_by_title( "home");
+wp_list_pages('title_li=&depth=2&exclude=' .  $home->ID);
+?>
             </ul>
           </nav>
-        </header> <!-- end of header -->
-      </div> <!-- end of header-container -->
+        </header>
+      </div>

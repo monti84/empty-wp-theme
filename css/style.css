@@ -1,0 +1,168 @@
+.alignleft {
+  float: left;
+}
+
+html, body { width:100%;height: 100%;}
+body { background: url('../images/background-body.png') repeat #ffffff; }
+
+#header { background: url('../images/background-header.png') repeat #ffffff; }
+#footer { background: url('../images/background-footer.png') repeat #ffffff; }
+#content { background: url('../images/background-content.png') repeat #ffffff; }
+
+#page-container {
+  width: 100%;
+  height: 100%;
+}
+
+#page-container > .top-page {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+#header {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* main menu */
+#header > .logo {
+  float: left;
+  clear: right;
+}
+
+#header > .social,
+#header > .contact {
+  float: right;
+  clear: right;
+}
+
+#header > .social > ul,
+#header > .contact > ul {
+  list-style-type: none;
+}
+
+#header > .social > ul > li {
+  float: left;
+}
+
+#header > nav {
+  float: none;
+  clear: both;
+}
+
+#header > nav > ul > li {
+  float: left;
+}
+
+#header > nav > ul > li > ul {
+  position: absolute;
+  z-index: 9999;
+}
+
+#header > nav > ul li ul {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+#header > nav > ul > li > ul > li > ul {
+  position: absolute;
+  z-index: 9999;
+  left: 100%;
+  margin-top: -3ex;
+  width: 10em;
+  background-color: white;
+  border: 1px solid #cccccc;
+}
+
+#header > nav > ul,
+#header > nav > ul ul {
+  list-style-type: none;
+}
+
+#header > nav > ul ul {
+  display: none;
+}
+
+#header > nav > ul li:hover > ul {
+  display: block;
+}
+
+
+
+
+/* main content */
+
+#main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#main > .content {
+  padding-bottom: 30px;
+}
+
+#main.two-column-right > .content {
+  float: left;
+  width: 70%;
+}
+
+#main.two-column-left > .content {
+  float: right;
+  width: 70%;
+}
+
+#main.full > .content {
+  width: 100%;
+}
+
+#main.two-column-right > aside {
+  width: 20%;
+  float: right;
+}
+
+#main.two-column-left > aside {
+  width: 20%;
+  float: left;
+}
+
+#main .three-column-equal > .block {
+  width: 33%;
+  float: left;
+}
+
+
+
+
+/* footer */
+
+#footer {
+  width: 960px;
+  height: 30px;
+  margin: -30px auto 0 auto;
+}
+
+#footer ul.menu {
+  list-style-type: none;
+}
+
+#footer ul.menu > li {
+  float: left;
+  margin-right: 5px;}
+
+#footer ul.menu > li:last-child {
+  margin-right: 0;
+}
+
+#footer ul.menu li > span:before {
+  content: '|';
+}
+
+#footer ul.menu > li:first-child > span:before {
+  content: '';
+}
+
+#footer ul.menu > li > span > a {
+  margin-left: 5px;
+}
